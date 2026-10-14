@@ -28,11 +28,11 @@ const week = (d) => Math.floor(Date.parse(d) / 864e5 / 7);
 export function cyclePolls(from, to) {
   const { polls, partyCodes } = pivotPolls(rows.filter((r) => r.poll_date > from && r.poll_date < to));
   const limite = new Date(Date.parse(to) - 30 * 864e5).toISOString().slice(0, 10);
-  const withdrawn = [];
+  const withdrawn = [], lastMeasured = {};
   for (const p of partyCodes) {
     const derniere = polls.filter((q) => q.shares[p] !== null).map((q) => q.pollDate).sort().at(-1);
     if (!derniere || derniere >= limite) continue;
-    withdrawn.push(p);
+    withdrawn.push(p); lastMeasured[p] = derniere;
     for (const q of polls) if (q.pollDate > derniere) { q.shares[p] = 0; q.reported.add(p); }
   }
   const m = new Map();
@@ -40,7 +40,7 @@ export function cyclePolls(from, to) {
     const k = `${p.firm}|${week(p.pollDate)}`;
     if (!m.has(k) || p.pollDate > m.get(k).pollDate) m.set(k, p);
   }
-  return { polls: [...m.values()].sort((a, b) => a.pollDate.localeCompare(b.pollDate)), partyCodes, withdrawn };
+  return { polls: [...m.values()].sort((a, b) => a.pollDate.localeCompare(b.pollDate)), partyCodes, withdrawn, lastMeasured };
 }
 
 /** Composition P sans les partis retirés, renormalisée. */

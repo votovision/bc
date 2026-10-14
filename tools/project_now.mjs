@@ -74,10 +74,25 @@ for (const g of REGIONS) if (regPool[g]) console.log(`  sondages ${g.padEnd(5)} 
 const seatDraws = sim.seats.map((d) => ({ ...d, AUTRES: 0 }));
 // Partis affichés : ceux qui présentent au moins une candidature en 2026.
 const shown = P.filter((p) => candidates.some((c) => c.party_code === p));
-const dates = [];
-for (let d = new Date(polls[0].pollDate); d <= new Date(asOf); d.setDate(d.getDate() + 7)) dates.push(d.toISOString().slice(0, 10));
-if (dates[dates.length - 1] !== asOf) dates.push(asOf);
-const trendSeries = predictTrendSeries(model, dates, { nSamples: 300, seed: 1 });
+// Tendance affichée : un GP par cycle (2017-2020, 2020-2024, depuis 2024), séries mises
+// bout à bout ; un parti retiré disparaît après sa dernière mesure, les autres parts
+// renormalisées.
+const weekly = (from, to) => { const out = []; for (let d = new Date(from); d <= new Date(to); d.setDate(d.getDate() + 7)) out.push(d.toISOString().slice(0, 10)); if (out.at(-1) !== to) out.push(to); return out; };
+const cycleSeries = (from, to, m, cycle) => predictTrendSeries(m, weekly(cycle.polls[0].pollDate, to), { nSamples: 300, seed: 1 }).map((row) => {
+  const gone = cycle.withdrawn.filter((p) => row.date > cycle.lastMeasured[p] && row[p]);
+  if (!gone.length) return row;
+  const k = 1 / (1 - gone.reduce((a, p) => a + row[p].mean, 0));
+  const out = { date: row.date };
+  for (const [p, v] of Object.entries(row)) if (p !== "date" && !gone.includes(p)) out[p] = Object.fromEntries(Object.entries(v).map(([s, x]) => [s, x * k]));
+  return out;
+});
+const trendSeries = [
+  ...TRANSITIONS.flatMap((T) => {
+    const c = cyclePolls(T.base[0], T.target[0]);
+    return cycleSeries(T.base[0], T.target[0], fitTrend(c.polls, c.partyCodes, { calendar }), c);
+  }),
+  ...cycleSeries(LAST[0], asOf, model, { polls, withdrawn, lastMeasured: {} }),
+];
 const winnerSeats = (shares) => { const s = Object.fromEntries(P.map((p) => [p, 0])); for (const v of shares) s[winnerOf(v)]++; return s; };
 const gallagher = (v, seats, n) => Math.sqrt(P.reduce((t, p, j) => t + (100 * v[j] - (100 * seats[p]) / n) ** 2, 0) / 2);
 const gallagherPrevious = gallagher(aggregate(list), winnerSeats(list.map((x) => x.shares)), list.length);
@@ -93,13 +108,15 @@ const national = aggregate(list.map((x, i) => ({ ...x, s: sim.point[i] })), (x) 
 const dash = {
   meta: { generatedAt: new Date().toISOString(), asOf, electionDate: ELECTION, nDraws: N, gallagherPrevious, projectedVote: Object.fromEntries(P.map((p, j) => [p, national[j]])),
     nPolls: polls.length, nRegionalPolls: regPolls.filter((q2) => q2.date > LAST[0] && q2.date <= asOf).length, nRidings: list.length, baseElection: LAST[0], tau, kappa: KAPPA },
-  partyCodes: shown, totalSeats: list.length, trendSeries,
+  partyCodes: shown, trendPartyCodes: P.filter((p) => trendSeries.some((r) => r[p])), totalSeats: list.length, trendSeries,
   ridingForecast: Object.fromEntries(list.map((x, i) => [x.code, { shares: Object.fromEntries(P.map((p, j) => [p, sim.point[i][j]])), winner: winnerOf(sim.point[i]) }])),
   ridingWinProbs: Object.fromEntries(list.map((x, i) => [x.code, { ...sim.winProb[i], AUTRES: 0 }])),
   ridingBaseline: Object.fromEntries(list.map((x) => [x.code, Object.fromEntries(P.map((p, j) => [p, x.shares[j]]))])),
   ridingNames: Object.fromEntries(list.map((x) => [x.code, x.name])),
   ridingRegions: Object.fromEntries(list.map((x) => [x.code, ZONE_NAMES[x.zone]])),
-  ridingCandidates: Object.fromEntries(list.map((x) => [x.code, [...(running.get(x.code) ?? [])]])),
+  // Candidats par parti (plusieurs « autres » : noms joints).
+  ridingCandidates: Object.fromEntries(list.map((x) => [x.code, Object.fromEntries(shown.map((p) => [p,
+    candidates.filter((c) => c.riding_code === x.code && c.party_code === p).map((c) => c.name).join(", ")]).filter(([, v]) => v))])),
   seatDistributions: seatDistributions(seatDraws, shown),
   pointCounts: { ...sim.pointSeats, AUTRES: 0 }, medoidCounts: { ...sim.medoid, AUTRES: 0 },
   scenarios: governmentScenarios(seatDraws, list.length, shown),
