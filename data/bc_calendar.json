@@ -1,0 +1,22 @@
+{
+ "note": "Points de rupture : élection d'un chef des partis principaux et recompositions du système de partis (Wikipédia en anglais, pages des partis et des élections générales) ; campagnes : déclenchement et scrutin (Elections BC). L'effet de chaque point de rupture est un hyperparamètre ajusté (rho = 1 : aucun effet).",
+ "changepoints": [
+  "2018-02-03",
+  "2020-09-14",
+  "2022-02-05",
+  "2022-10-21",
+  "2024-08-28",
+  "2025-06-09",
+  "2026-09-18"
+ ],
+ "events": {
+  "2018-02-03": "Andrew Wilkinson élu chef du BC Liberal Party",
+  "2020-09-14": "Sonia Furstenau élue cheffe du BC Green Party",
+  "2022-02-05": "Kevin Falcon élu chef du BC Liberal Party",
+  "2022-10-21": "David Eby proclamé chef du BC NDP",
+  "2024-08-28": "BC United suspend sa campagne et appuie le Parti conservateur",
+  "2025-06-09": "Fondation de OneBC",
+  "2026-09-18": "Des député.es conservateurs fondent le caucus de CentreBC"
+ },
+ "campaigns": [["2017-04-11", "2017-05-09"], ["2020-09-21", "2020-10-24"], ["2024-09-21", "2024-10-19"], ["2026-09-22", "2026-10-24"]]
+}

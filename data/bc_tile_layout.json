@@ -1,0 +1,589 @@
+{
+ "tiles": {
+  "OBG": {
+   "x": 3.3,
+   "y": 11.76,
+   "name": "Oak Bay-Gordon Head",
+   "abbr": ""
+  },
+  "VTB": {
+   "x": 2.2,
+   "y": 11.76,
+   "name": "Victoria-Beacon Hill",
+   "abbr": ""
+  },
+  "VTS": {
+   "x": 3.85,
+   "y": 10.66,
+   "name": "Victoria-Swan Lake",
+   "abbr": ""
+  },
+  "SAN": {
+   "x": 2.75,
+   "y": 8.46,
+   "name": "Saanich North and the Islands",
+   "abbr": ""
+  },
+  "SAS": {
+   "x": 3.3,
+   "y": 9.56,
+   "name": "Saanich South",
+   "abbr": ""
+  },
+  "CRC": {
+   "x": 0.55,
+   "y": 6.26,
+   "name": "Courtenay-Comox",
+   "abbr": ""
+  },
+  "CWV": {
+   "x": 1.1,
+   "y": 9.56,
+   "name": "Cowichan Valley",
+   "abbr": ""
+  },
+  "ESC": {
+   "x": 2.75,
+   "y": 10.66,
+   "name": "Esquimalt-Colwood",
+   "abbr": ""
+  },
+  "JFM": {
+   "x": 1.65,
+   "y": 10.66,
+   "name": "Juan de Fuca-Malahat",
+   "abbr": ""
+  },
+  "LAO": {
+   "x": 1.1,
+   "y": 7.36,
+   "name": "Ladysmith-Oceanside",
+   "abbr": ""
+  },
+  "LFH": {
+   "x": 2.2,
+   "y": 9.56,
+   "name": "Langford-Highlands",
+   "abbr": ""
+  },
+  "MPR": {
+   "x": 0.55,
+   "y": 8.46,
+   "name": "Mid Island-Pacific Rim",
+   "abbr": ""
+  },
+  "NAI": {
+   "x": 1.65,
+   "y": 8.46,
+   "name": "Nanaimo-Gabriola Island",
+   "abbr": ""
+  },
+  "NAL": {
+   "x": 2.2,
+   "y": 7.36,
+   "name": "Nanaimo-Lantzville",
+   "abbr": ""
+  },
+  "NOI": {
+   "x": 0,
+   "y": 5.16,
+   "name": "North Island",
+   "abbr": ""
+  },
+  "BNC": {
+   "x": 10.56,
+   "y": 6.26,
+   "name": "Burnaby Centre",
+   "abbr": ""
+  },
+  "BNE": {
+   "x": 11.66,
+   "y": 6.26,
+   "name": "Burnaby East",
+   "abbr": ""
+  },
+  "BNN": {
+   "x": 10.56,
+   "y": 8.46,
+   "name": "Burnaby-New Westminster",
+   "abbr": ""
+  },
+  "BNO": {
+   "x": 11.11,
+   "y": 5.16,
+   "name": "Burnaby North",
+   "abbr": ""
+  },
+  "BNS": {
+   "x": 9.46,
+   "y": 8.46,
+   "name": "Burnaby South-Metrotown",
+   "abbr": ""
+  },
+  "POC": {
+   "x": 12.76,
+   "y": 6.26,
+   "name": "Port Coquitlam",
+   "abbr": ""
+  },
+  "POM": {
+   "x": 11.66,
+   "y": 4.06,
+   "name": "Port Moody-Burquitlam",
+   "abbr": ""
+  },
+  "RCB": {
+   "x": 6.71,
+   "y": 7.36,
+   "name": "Richmond-Bridgeport",
+   "abbr": ""
+  },
+  "VHA": {
+   "x": 9.46,
+   "y": 6.26,
+   "name": "Vancouver-Hastings",
+   "abbr": ""
+  },
+  "VKE": {
+   "x": 8.91,
+   "y": 7.36,
+   "name": "Vancouver-Kensington",
+   "abbr": ""
+  },
+  "VLA": {
+   "x": 7.26,
+   "y": 8.46,
+   "name": "Vancouver-Langara",
+   "abbr": ""
+  },
+  "VLM": {
+   "x": 8.36,
+   "y": 6.26,
+   "name": "Vancouver-Little Mountain",
+   "abbr": ""
+  },
+  "VNP": {
+   "x": 6.71,
+   "y": 5.16,
+   "name": "Vancouver-Point Grey",
+   "abbr": ""
+  },
+  "VNQ": {
+   "x": 7.81,
+   "y": 7.36,
+   "name": "Vancouver-Quilchena",
+   "abbr": ""
+  },
+  "VNR": {
+   "x": 10.01,
+   "y": 7.36,
+   "name": "Vancouver-Renfrew",
+   "abbr": ""
+  },
+  "VNY": {
+   "x": 7.81,
+   "y": 5.16,
+   "name": "Vancouver-Yaletown",
+   "abbr": ""
+  },
+  "WVC": {
+   "x": 8.36,
+   "y": 4.06,
+   "name": "West Vancouver-Capilano",
+   "abbr": ""
+  },
+  "VNS": {
+   "x": 7.26,
+   "y": 6.26,
+   "name": "Vancouver-South Granville",
+   "abbr": ""
+  },
+  "VNT": {
+   "x": 8.91,
+   "y": 5.16,
+   "name": "Vancouver-Strathcona",
+   "abbr": ""
+  },
+  "VNW": {
+   "x": 7.26,
+   "y": 4.06,
+   "name": "Vancouver-West End",
+   "abbr": ""
+  },
+  "RCC": {
+   "x": 7.81,
+   "y": 9.56,
+   "name": "Richmond Centre",
+   "abbr": ""
+  },
+  "RCQ": {
+   "x": 8.91,
+   "y": 9.56,
+   "name": "Richmond-Queensborough",
+   "abbr": ""
+  },
+  "RCS": {
+   "x": 6.71,
+   "y": 9.56,
+   "name": "Richmond-Steveston",
+   "abbr": ""
+  },
+  "SRC": {
+   "x": 11.66,
+   "y": 8.46,
+   "name": "Surrey City Centre",
+   "abbr": ""
+  },
+  "SRD": {
+   "x": 13.31,
+   "y": 9.56,
+   "name": "Surrey-Cloverdale",
+   "abbr": ""
+  },
+  "SRF": {
+   "x": 12.76,
+   "y": 8.46,
+   "name": "Surrey-Fleetwood",
+   "abbr": ""
+  },
+  "SRG": {
+   "x": 13.31,
+   "y": 7.36,
+   "name": "Surrey-Guildford",
+   "abbr": ""
+  },
+  "SRN": {
+   "x": 10.56,
+   "y": 10.66,
+   "name": "Surrey-Newton",
+   "abbr": ""
+  },
+  "SUN": {
+   "x": 11.11,
+   "y": 9.56,
+   "name": "Surrey North",
+   "abbr": ""
+  },
+  "SUP": {
+   "x": 11.66,
+   "y": 10.66,
+   "name": "Surrey-Panorama",
+   "abbr": ""
+  },
+  "SUR": {
+   "x": 12.21,
+   "y": 9.56,
+   "name": "Surrey-Serpentine River",
+   "abbr": ""
+  },
+  "SUS": {
+   "x": 12.76,
+   "y": 10.66,
+   "name": "Surrey South",
+   "abbr": ""
+  },
+  "SWR": {
+   "x": 11.11,
+   "y": 11.76,
+   "name": "Surrey-White Rock",
+   "abbr": ""
+  },
+  "VFV": {
+   "x": 8.36,
+   "y": 8.46,
+   "name": "Vancouver-Fraserview",
+   "abbr": ""
+  },
+  "CQB": {
+   "x": 12.76,
+   "y": 4.06,
+   "name": "Coquitlam-Burke Mountain",
+   "abbr": ""
+  },
+  "CQM": {
+   "x": 12.21,
+   "y": 7.36,
+   "name": "Coquitlam-Maillardville",
+   "abbr": ""
+  },
+  "DLN": {
+   "x": 10.01,
+   "y": 9.56,
+   "name": "Delta North",
+   "abbr": ""
+  },
+  "DLS": {
+   "x": 8.36,
+   "y": 10.66,
+   "name": "Delta South",
+   "abbr": ""
+  },
+  "LLA": {
+   "x": 14.41,
+   "y": 9.56,
+   "name": "Langley-Abbotsford",
+   "abbr": ""
+  },
+  "LWG": {
+   "x": 13.86,
+   "y": 8.46,
+   "name": "Langley-Walnut Grove",
+   "abbr": ""
+  },
+  "LWI": {
+   "x": 13.86,
+   "y": 10.66,
+   "name": "Langley-Willowbrook",
+   "abbr": ""
+  },
+  "MAE": {
+   "x": 14.41,
+   "y": 7.36,
+   "name": "Maple Ridge East",
+   "abbr": ""
+  },
+  "MAP": {
+   "x": 13.31,
+   "y": 2.96,
+   "name": "Maple Ridge-Pitt Meadows",
+   "abbr": ""
+  },
+  "NMC": {
+   "x": 11.11,
+   "y": 7.36,
+   "name": "New Westminster-Coquitlam",
+   "abbr": ""
+  },
+  "NVL": {
+   "x": 10.01,
+   "y": 5.16,
+   "name": "North Vancouver-Lonsdale",
+   "abbr": ""
+  },
+  "NVS": {
+   "x": 9.46,
+   "y": 4.06,
+   "name": "North Vancouver-Seymour",
+   "abbr": ""
+  },
+  "ABM": {
+   "x": 17.82,
+   "y": 10.66,
+   "name": "Abbotsford-Mission",
+   "abbr": ""
+  },
+  "ABS": {
+   "x": 18.37,
+   "y": 11.76,
+   "name": "Abbotsford South",
+   "abbr": ""
+  },
+  "ABW": {
+   "x": 17.27,
+   "y": 11.76,
+   "name": "Abbotsford West",
+   "abbr": ""
+  },
+  "CHC": {
+   "x": 18.92,
+   "y": 10.66,
+   "name": "Chilliwack-Cultus Lake",
+   "abbr": ""
+  },
+  "CHN": {
+   "x": 18.37,
+   "y": 9.56,
+   "name": "Chilliwack North",
+   "abbr": ""
+  },
+  "FRN": {
+   "x": 18.37,
+   "y": 7.36,
+   "name": "Fraser-Nicola",
+   "abbr": ""
+  },
+  "BDS": {
+   "x": 24.53,
+   "y": 11.76,
+   "name": "Boundary-Similkameen",
+   "abbr": ""
+  },
+  "PES": {
+   "x": 23.98,
+   "y": 10.66,
+   "name": "Penticton-Summerland",
+   "abbr": ""
+  },
+  "POR": {
+   "x": 21.78,
+   "y": 8.46,
+   "name": "Powell River-Sunshine Coast",
+   "abbr": ""
+  },
+  "VRL": {
+   "x": 25.08,
+   "y": 8.46,
+   "name": "Vernon-Lumby",
+   "abbr": ""
+  },
+  "WKP": {
+   "x": 23.43,
+   "y": 9.56,
+   "name": "West Kelowna-Peachland",
+   "abbr": ""
+  },
+  "WVS": {
+   "x": 22.33,
+   "y": 9.56,
+   "name": "West Vancouver-Sea to Sky",
+   "abbr": ""
+  },
+  "SHU": {
+   "x": 25.63,
+   "y": 7.36,
+   "name": "Salmon Arm-Shuswap",
+   "abbr": ""
+  },
+  "CLR": {
+   "x": 26.73,
+   "y": 7.36,
+   "name": "Columbia River-Revelstoke",
+   "abbr": ""
+  },
+  "KAC": {
+   "x": 22.88,
+   "y": 8.46,
+   "name": "Kamloops Centre",
+   "abbr": ""
+  },
+  "KAN": {
+   "x": 23.43,
+   "y": 7.36,
+   "name": "Kamloops-North Thompson",
+   "abbr": ""
+  },
+  "KEC": {
+   "x": 24.53,
+   "y": 9.56,
+   "name": "Kelowna Centre",
+   "abbr": ""
+  },
+  "KLC": {
+   "x": 25.63,
+   "y": 9.56,
+   "name": "Kelowna-Lake Country-Coldstream",
+   "abbr": ""
+  },
+  "KLM": {
+   "x": 25.08,
+   "y": 10.66,
+   "name": "Kelowna-Mission",
+   "abbr": ""
+  },
+  "KOC": {
+   "x": 27.83,
+   "y": 9.56,
+   "name": "Kootenay Central",
+   "abbr": ""
+  },
+  "KOM": {
+   "x": 26.73,
+   "y": 9.56,
+   "name": "Kootenay-Monashee",
+   "abbr": ""
+  },
+  "KOR": {
+   "x": 27.28,
+   "y": 10.66,
+   "name": "Kootenay-Rockies",
+   "abbr": ""
+  },
+  "BLS": {
+   "x": 22.88,
+   "y": 1.2,
+   "name": "Bulkley Valley-Stikine",
+   "abbr": ""
+  },
+  "CBC": {
+   "x": 24.53,
+   "y": 4.5,
+   "name": "Cariboo-Chilcotin",
+   "abbr": ""
+  },
+  "PCN": {
+   "x": 25.08,
+   "y": 1.2,
+   "name": "Peace River North",
+   "abbr": ""
+  },
+  "PCS": {
+   "x": 26.73,
+   "y": 2.3,
+   "name": "Peace River South",
+   "abbr": ""
+  },
+  "PRM": {
+   "x": 25.63,
+   "y": 2.3,
+   "name": "Prince George-Mackenzie",
+   "abbr": ""
+  },
+  "PRO": {
+   "x": 25.08,
+   "y": 3.4,
+   "name": "Prince George-North Cariboo",
+   "abbr": ""
+  },
+  "PRV": {
+   "x": 26.18,
+   "y": 3.4,
+   "name": "Prince George-Valemount",
+   "abbr": ""
+  },
+  "SKE": {
+   "x": 23.98,
+   "y": 3.4,
+   "name": "Skeena",
+   "abbr": ""
+  },
+  "NEC": {
+   "x": 24.53,
+   "y": 2.3,
+   "name": "Nechako Lakes",
+   "abbr": ""
+  },
+  "NOH": {
+   "x": 23.43,
+   "y": 4.5,
+   "name": "North Coast-Haida Gwaii",
+   "abbr": ""
+  }
+ },
+ "regions": [
+  {
+   "label": "Île",
+   "x": 1.93,
+   "y": 4.17
+  },
+  {
+   "label": "Metro Vancouver",
+   "x": 10.56,
+   "y": 1.97
+  },
+  {
+   "label": "Vallée du Fraser",
+   "x": 18.1,
+   "y": 6.37
+  },
+  {
+   "label": "Intérieur",
+   "x": 24.8,
+   "y": 6.37
+  },
+  {
+   "label": "Nord",
+   "x": 24.8,
+   "y": 0.21
+  }
+ ]
+}
