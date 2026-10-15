@@ -1,6 +1,6 @@
 # bc
 
-Modèle de prévision des élections générales de la Colombie-Britannique (Votoscope).
+Modèle de prévision des élections générales de la Colombie-Britannique (Votovision).
 
 ## Organisation
 
@@ -9,12 +9,12 @@ Modèle de prévision des élections générales de la Colombie-Britannique (Vot
 | `src/` | Moteur commun : tendance des sondages par processus gaussien en log-ratios isométriques, compositions, résumés de simulation. |
 | `lib/` | Modèle de la Colombie-Britannique : swing par transfert avec présence des partis, ventilations régionales, simulation des sièges. |
 | `tools/` | Validation (transitions 2017-2020 et 2020-2024) et prévision courante (`project_now.mjs`). |
-| `ingest/` | Entrées du modèle tirées du dépôt de données `votoscope/data`. |
+| `ingest/` | Entrées du modèle tirées du dépôt de données `votovision/data`. |
 | `data/` | Entrées et sorties du modèle (JSON). |
 
 ## Utilisation
 
-Le dépôt de données `votoscope/data` est cloné à côté (`../data`).
+Le dépôt de données `votovision/data` est cloné à côté (`../data`).
 
 ```
 npm install

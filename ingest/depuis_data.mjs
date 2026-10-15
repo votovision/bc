@@ -1,5 +1,5 @@
 /**
- * Entrées du modèle tirées du dépôt de données votoscope/data (clone voisin
+ * Entrées du modèle tirées du dépôt de données votovision/data (clone voisin
  * ../data, ou chemin donné en argument) :
  *  - data/bc_polls.json : sondages provinciaux et ventilations régionales
  *    (sondages.csv et parts.csv, juridiction bc-provincial), une ligne par

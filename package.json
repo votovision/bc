@@ -1,7 +1,7 @@
 {
-  "name": "votoscope-bc",
+  "name": "votovision-bc",
   "version": "0.1.0",
-  "description": "Modèle de prévision des élections générales de la Colombie-Britannique (Votoscope)",
+  "description": "Modèle de prévision des élections générales de la Colombie-Britannique (Votovision)",
   "type": "module",
   "license": "GPL-3.0-only",
   "scripts": {
