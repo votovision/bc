@@ -25,6 +25,11 @@ const calendar = load("bc_calendar.json");
 const eve = load("bc_eve_national.json");
 const asOf = process.argv[2] ?? new Date().toISOString().slice(0, 10);
 const ELECTION = "2026-10-24", LAST = ["2024-10-19", "2023"];
+// Après le scrutin, la prévision de la veille reste telle quelle, pour la comparer aux résultats.
+if (asOf > ELECTION && !process.argv.includes("--forcer")) {
+  console.log(`Scrutin du ${ELECTION} passé : prévision figée (--forcer pour la recalculer)`);
+  process.exit(0);
+}
 const KAPPA = 0, N = 2000;
 const SPEC = { tau: 120, D: 16, campaigns: calendar.campaigns };
 

@@ -9,6 +9,10 @@
  *  - data/bc_riding_results.json : résultats officiels d'Elections BC par
  *    circonscription et par parti (2017 et 2020 sur la carte de 2015 ; 2020
  *    transposé et 2024 sur la carte de 2023) ;
+ *  - data/bc_results.json : résultats de la dernière élection générale,
+ *    après l'élection de référence du modèle (2026, préliminaires puis
+ *    définitifs) : sièges, votes et gagnant par circonscription, et leur
+ *    provenance ; absent tant qu'aucun résultat n'est publié ;
  *  - data/bc_candidates.json : candidatures (2017, 2020, 2024 avec votes et
  *    élus ; 2026) ;
  *  - data/bc_districts.json : district régional de chaque circonscription,
@@ -60,6 +64,26 @@ ecrire("bc_national_polls.json", sondages.filter((s) => s.region === "National")
 ecrire("bc_riding_results.json", lireCsv(join(DATA, "csv", "resultats.csv"))
   .filter((r) => r.juridiction === JURIDICTION)
   .map((r) => ({ election_date: r.election, boundary_year: r.carte, riding_code: r.circonscription, riding_name: r.nom, party_code: r.parti, votes: Number(r.votes) })));
+
+// Résultats de la dernière élection, pour les comparer à la prévision.
+const BASE = "2024-10-19";
+const recents = lireCsv(join(DATA, "csv", "resultats.csv")).filter((r) => r.juridiction === JURIDICTION && r.election > BASE);
+const derniere = recents.map((r) => r.election).sort().at(-1);
+if (derniere) {
+  const lignes = recents.filter((r) => r.election === derniere);
+  const ridings = {}, votes = {}, seats = {};
+  for (const r of lignes) {
+    const x = (ridings[r.circonscription] ??= { name: r.nom, votes: {} });
+    x.votes[r.parti] = Number(r.votes);
+    votes[r.parti] = (votes[r.parti] ?? 0) + Number(r.votes);
+  }
+  for (const x of Object.values(ridings)) {
+    x.winner = Object.entries(x.votes).sort((a, b) => b[1] - a[1])[0][0];
+    seats[x.winner] = (seats[x.winner] ?? 0) + 1;
+  }
+  const provenance = lignes[0].provenance;
+  ecrire("bc_results.json", { election: derniere, map: lignes[0].carte, preliminary: /préliminaires/.test(provenance), provenance, seats, votes, ridings });
+}
 
 ecrire("bc_candidates.json", lireCsv(join(DATA, "csv", "candidats_bc.csv")).map((c) => ({
   election_date: c.election, boundary_year: c.carte, riding_code: c.circonscription, name: c.nom, party_code: c.parti,
