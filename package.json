@@ -9,7 +9,7 @@
     "projection": "node tools/project_now.mjs"
   },
   "dependencies": {
-    "@tangent.to/ds": "^0.13.1",
+    "@tangent.to/ds": "^0.16.0",
     "linkedom": "^0.18.13"
   }
 }
